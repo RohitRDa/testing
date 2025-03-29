@@ -17,10 +17,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3  # ✅ Fixed this
+        uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v3  # ✅ Fixed this
+        uses: actions/setup-python@v3
         with:
           python-version: "3.9"
 
@@ -34,7 +34,7 @@ jobs:
         run: coverage html
 
       - name: Upload coverage report
-        uses: actions/upload-artifact@v3  # ✅ Fixed this
+        uses: actions/upload-artifact@v4  # ✅ Updated from v3 to v4
         with:
           name: test-coverage-report
           path: htmlcov
