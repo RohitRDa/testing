@@ -5,20 +5,20 @@ on:
     branches:
       - main
       - dev
+      - Unit_testing_branch
   pull_request:
     branches:
       - main
       - dev
+      - Unit_testing_branch
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v3
         with:
           python-version: "3.9"
 
