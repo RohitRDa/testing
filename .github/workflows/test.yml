@@ -31,7 +31,9 @@ jobs:
         run: echo "PYTHONPATH=$PWD/src" >> $GITHUB_ENV  # If src exists
 
       - name: Run tests with coverage
-        run: pytest -v --cov=src/calculator --cov-report=term-missing --cov-report=html --cov-fail-under=80
+        run: |
+          export PYTHONPATH=$(pwd)
+          pytest -v --cov=calculator_app --cov-report=term-missing --cov-report=html --cov-fail-under=80
 
       - name: Generate detailed coverage report
         run: coverage html
