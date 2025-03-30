@@ -1,3 +1,5 @@
+from calculator import add, subtract  # Ensure this works
+
 class Calculator:
     def add(self, a, b):
         return a + b

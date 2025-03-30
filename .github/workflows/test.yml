@@ -27,8 +27,11 @@ jobs:
       - name: Install dependencies
         run: pip install pytest pytest-cov coverage
 
-      - name: Run tests with detailed output
-        run: pytest -v --cov=calculator --cov-report=term-missing --cov-fail-under=80
+      - name: Set PYTHONPATH
+        run: echo "PYTHONPATH=$PWD/src" >> $GITHUB_ENV  # If src exists
+
+      - name: Run tests with coverage
+        run: pytest -v --cov=src/calculator --cov-report=term-missing --cov-report=html --cov-fail-under=80
 
       - name: Generate detailed coverage report
         run: coverage html
