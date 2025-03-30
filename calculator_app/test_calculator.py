@@ -1,5 +1,6 @@
 import pytest
-from calculator_app.calculator import Calculator  # ✅ Correct
+from calculator import Calculator
+
 @pytest.fixture
 def calc():
     return Calculator()
